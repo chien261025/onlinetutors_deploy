@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ECOURSES - Online Courses HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/client/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/client/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+<!-- Topbar Start -->
+<div th:replace="~{fragments/clientHeader :: clientHeader}"></div>
+<!-- Topbar End -->
+
+<!-- Navbar Start -->
+<div th:replace="~{fragments/clientSidebar :: clientSidebar}"></div>
+<!-- Navbar End -->
+
+<div class="container">
+    <h2 class="mb-4">Tạo Lịch Học Theo Tuần cho khóa học <span th:text="${course.nameCourse}"></span></h2>
+
+        <form th:action="@{/schedule/create}" method="post" th:object="${event}">
+
+            <div class="mb-3" style="display: none;">
+                <input type="hidden" name="courseId" th:value="${course.id}" />
+            </div>
+
+        <div class="mb-3" style="display: none;">
+            <label for="title" class="form-label">Title</label>
+        <input type="hidden" class="form-control"  th:field="*{title}" id="title">
+        </div>
+
+        <!-- Ngày bắt đầu -->
+        <div class="mb-3">
+            <label
+                    for="startDate" class="form-label">Ngày bắt đầu khóa học</label>
+            <input type="date" class="form-control"  th:field="*{startRecur}" id="startDate" required>
+        </div>
+
+        <!-- Số tuần -->
+        <div class="mb-3">
+            <label for="week" class="form-label">Số tuần học</label>
+            <input type="number" class="form-control"  th:field="*{weeks}" min="1" id="week"  required>
+        </div>
+
+        <div class="mb-3">
+        <label for="startTime" class="form-label">Giờ bắt đầu</label>
+        <input type="time" th:field="*{startTime}" required id="startTime" />
+
+            <label for="endTime" class="form-label">Giờ kết thúc</label>
+            <input type="time" th:field="*{endTime}" required id="endTime" />
+        </div>
+
+
+        <!-- Chọn ngày trong tuần -->
+        <div class="mb-3">
+            <label class="form-label">Ngày học trong tuần</label>
+            <div class="row">
+
+                <div class="col-6 col-md-3">
+                    <label for="MONDAY">Thứ 2</label>
+                    <input type="checkbox"  th:field="*{daysOfWeek}" value="MONDAY" id="MONDAY">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <label for="TUESDAY">Thứ 3</label>
+                    <input type="checkbox"  th:field="*{daysOfWeek}" value="TUESDAY" id="TUESDAY">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <label for="WEDNESDAY">Thứ 4</label>
+                    <input type="checkbox"  th:field="*{daysOfWeek}" value="WEDNESDAY" id="WEDNESDAY">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <label for="THURSDAY">Thứ 5</label>
+                    <input type="checkbox"  th:field="*{daysOfWeek}" value="THURSDAY" id="THURSDAY">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <label for="FRIDAY">Thứ 6</label>
+                    <input type="checkbox"  th:field="*{daysOfWeek}" value="FRIDAY" id="FRIDAY">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <label for="SATURDAY">Thứ 7</label>
+                    <input type="checkbox"  th:field="*{daysOfWeek}" value="SATURDAY" id="SATURDAY">
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <label for="SUNDAY">Chủ nhật</label>
+                    <input type="checkbox"  th:field="*{daysOfWeek}" value="SUNDAY" id="SUNDAY">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Chọn màu sự kiện -->
+        <div class="mb-3">
+            <label class="form-label">Màu hiển thị</label>
+            <input type="color" class="form-control form-control-color"  th:field="*{color}" value="#1E90FF">
+        </div>
+
+        <input type="hidden" th:field="*{course}" th:value="${course}" />
+
+        <button type="submit" class="btn btn-primary">Tạo Lịch</button>
+
+    </form>
+</div>
+
+
+<!-- Footer Start -->
+<div th:replace="~{fragments/clientFooter :: clientFooter}"></div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/client/lib/easing/easing.min.js}"></script>
+<script th:src="@{/client/lib/owlcarousel/owl.carousel.min.js}"></script>
+
+<!-- Contact Javascript File -->
+<script th:src="@{/client/mail/jqBootstrapValidation.min.js}"></script>
+<script th:src="@{/client/mail/contact.js}"></script>
+<script th:src="@{/client/mail/contact.js}"></script>
+
+<!-- Template Javascript -->
+<script th:src="@{/client/js/main.js}"></script>
+</body>
+
+</html>

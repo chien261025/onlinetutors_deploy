@@ -1,0 +1,103 @@
+<!-- templates/fragments/header.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Đây là fragment 'header' -->
+<div th:fragment="clientHeader">
+    <div class="container-fluid d-none d-lg-block">
+        <div class="row align-items-center py-4 px-xl-5">
+            <div class="col-lg-3">
+                <a th:href="@{/}" class="text-decoration-none">
+                    <h1 class="m-0"><span class="text-primary">Hire</span>tutor</h1>
+                </a>
+            </div>
+            <div class="col-lg-3 text-right">
+                <div class="d-inline-flex align-items-center">
+                    <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
+                    <div class="text-left">
+                        <h6 class="font-weight-semi-bold mb-1">TP.HCM</h6>
+                        <small>Hoàng diệu 2.tp.Thủ Đức</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-right">
+                <div class="d-inline-flex align-items-center">
+                    <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
+                    <div class="text-left">
+                        <h6 class="font-weight-semi-bold mb-1">Email Us</h6>
+                        <small>info@example.com</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-right" th:if="${role == null} ">
+                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" th:href="@{/login}">Tham Gia Ngay</a>
+            </div>
+            <div class="col-lg-3 text-right" th:if="${role == 'TUTOR'}">
+                <div class="d-flex align-items-center ml-auto">
+                    <a href="#" class="nav-item nav-link position-relative" style="color: #4A4A4A; font-size: 1.4rem; padding: 5px 12px;">
+                        <i class="fa fa-bell"></i>
+                        <span class="position-absolute badge rounded-pill bg-danger" style="font-size: 0.6rem; top: 0px; right: 0px; border: 2px solid white;">
+                                        4
+                                    </span>
+                    </a>
+                    <a href="#" class="nav-item nav-link" style="color: #4A4A4A; font-size: 1.4rem; padding: 5px 12px;">
+                        <i class="fa fa-desktop"></i>
+                    </a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" style="padding: 5px 10px;">
+                                    <span th:text="${userInitials}" class="d-inline-flex align-items-center justify-content-center bg-secondary text-dark rounded-circle" style="width: 35px; height: 35px; font-weight: 600; font-size: 0.9rem;">
+                                    </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right rounded-0 m-0">
+                            <a th:href="@{/tutor/profile}" class="dropdown-item">Hồ sơ</a>
+                            <a th:href="@{/course/tutor/list}" class="dropdown-item">course</a>
+                            <a th:href="@{/booking/tutor/list}" class="dropdown-item">booking</a>
+                            <a th:href="@{/schedule}" class="dropdown-item">Lịch</a>
+                            <a th:href="@{/ebooks}" class="dropdown-item">Ebook</a>
+                            <form th:action="@{/logout}" method="post">
+                                <div>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                </div>
+                                <button class="dropdown-item">Đăng xuất</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-right" th:if="${role == 'PARENT'}">
+                <div class="d-flex align-items-center ml-auto">
+                    <a href="#" class="nav-item nav-link position-relative" style="color: #4A4A4A; font-size: 1.4rem; padding: 5px 12px;">
+                        <i class="fa fa-bell"></i>
+                        <span class="position-absolute badge rounded-pill bg-danger" style="font-size: 0.6rem; top: 0px; right: 0px; border: 2px solid white;">
+                                        4
+                                    </span>
+                    </a>
+                    <a href="#" class="nav-item nav-link" style="color: #4A4A4A; font-size: 1.4rem; padding: 5px 12px;">
+                        <i class="fa fa-desktop"></i>
+                    </a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" style="padding: 5px 10px;">
+                                    <span th:text="${userInitials}" class="d-inline-flex align-items-center justify-content-center bg-secondary text-dark rounded-circle" style="width: 35px; height: 35px; font-weight: 600; font-size: 0.9rem;">
+                                    </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right rounded-0 m-0">
+                            <a th:href="@{/parent/profile}" class="dropdown-item">Hồ sơ</a>
+                            <a th:href="@{/home-parent}" class="dropdown-item">Khóa học của tôi</a>
+                            <a th:href="@{/booking/parent/list}" class="dropdown-item">booking</a>
+                            <a th:href="@{/schedule}" class="dropdown-item">Lịch</a>
+                            <form th:action="@{/logout}" method="post">
+                                <div>
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                </div>
+                                <button class="dropdown-item">Đăng xuất</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

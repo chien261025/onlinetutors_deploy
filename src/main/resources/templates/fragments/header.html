@@ -1,0 +1,33 @@
+<!-- templates/fragments/header.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Đây là fragment 'header' -->
+<div th:fragment="header">
+    <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+        <a th:href="@{/admin}" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+        </a>
+        <div class="navbar-nav align-items-center ms-auto">
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <span class="d-none d-lg-inline-flex">John Doe</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="dropdown-item">My Profile</a>
+                    <a href="#" class="dropdown-item">Reset Password</a>
+                    <form th:action="@{/logout}" method="post">
+                        <div>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                        </div>
+                        <button class="dropdown-item">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>
+

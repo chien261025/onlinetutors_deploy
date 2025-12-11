@@ -1,0 +1,87 @@
+<!-- templates/fragments/header.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Đây là fragment 'course' -->
+<div th:fragment="course">
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Môn học</h5>
+                <h1>Khám Phá Các Môn Học Hàng Đầu</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluidd" th:src="@{/client/img/t1.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none"  th:href="@{/parent/courses/details(id=${subjects[0]})}">
+                            <h4 class="text-white font-weight-medium">Môn Toán</h4>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" th:src="@{/client/img/v1.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{/parent/courses/details(id=${subjects[7]})}">
+                            <h4 class="text-white font-weight-medium">Môn Ngữ Văn</h4>
+                            <span>100 Courses</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluidd" th:src="@{/client/img/h1.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{/parent/courses/details(id=${subjects[2]})}">
+                            <h4 class="text-white font-weight-medium">Môn Hóa </h4>
+
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-ly" th:src="@{/client/img/l1.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{/parent/courses/details(id=${subjects[1]})}">
+                            <h4 class="text-white font-weight-medium">Môn Lý</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" th:src="@{/client/img/s1.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{/parent/courses/details(id=${subjects[5]})}">
+                            <h4 class="text-white font-weight-medium">Môn Lịch Sử</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-sinh" th:src="@{/client/img/s2.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{/parent/courses/details(id=${subjects[3]})}">
+                            <h4 class="text-white font-weight-medium">Môn Sinh Học </h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluidd" th:src="@{/client/img/t2.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{/parent/courses/details(id=${subjects[4]})}">
+                            <h4 class="text-white font-weight-medium">Môn Tiếng Anh</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" th:src="@{/client/img/d1.jpg}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" th:href="@{/parent/courses/details(id=${subjects[6]})}">
+                            <h4 class="text-white font-weight-medium">Môn Địa Lý</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

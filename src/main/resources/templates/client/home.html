@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        ECOURSES
+        -
+        Online
+        Courses
+        HTML
+        Template</title>
+    <meta content="width=device-width, initial-scale=1.0"
+          name="viewport">
+    <meta content="Free HTML Templates"
+          name="keywords">
+    <meta content="Free HTML Templates"
+          name="description">
+
+    <!-- Favicon -->
+    <link th:href="@{/client/img/favicon.ico}"
+          rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/client/lib/owlcarousel/assets/owl.carousel.min.css}"
+          rel="stylesheet">
+    <link th:href="@{/client/css/style.css}"
+          rel="stylesheet">
+
+    <style>
+        .img-fluid3 {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Topbar Start -->
+<div th:replace="~{fragments/clientHeader :: clientHeader}"></div>
+<!-- Topbar End -->
+
+
+<!-- Navbar Start -->
+<div th:replace="~{fragments/clientSidebar :: clientSidebar}"></div>
+<!-- Navbar End -->
+
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 pb-5 mb-5">
+    <div id="header-carousel"
+         class="carousel slide carousel-fade"
+         data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#header-carousel"
+                data-slide-to="0"
+                class="active"></li>
+            <li data-target="#header-carousel"
+                data-slide-to="1"></li>
+            <li data-target="#header-carousel"
+                data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active"
+                 style="min-height: 300px;">
+                <img class="position-relative w-100"
+                     th:src="@{/client/img/a1.png}"
+                     style="min-height: 300px; object-fit: cover;">
+                <!-- hình ảnh nền -->
+                <div class="carousel-caption d-flex align-items-center justify-content-center">
+                    <div class="p-5"
+                         style="width: 100%; max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-md-3">
+                            Khóa
+                            học
+                            trực
+                            tuyến
+                            tốt
+                            nhất</h5>
+                        <h1 class="display-3 text-white mb-md-4">
+                            Giáo
+                            dục
+                            tốt
+                            nhất
+                            từ
+                            ngôi
+                            nhà
+                            của
+                            bạn</h1>
+                        <a> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item"
+                 style="min-height: 300px;">
+                <img class="position-relative w-100"
+                     th:src="@{/client/img/a2.png}"
+                     style="min-height: 300px; object-fit: cover;">
+                <div class="carousel-caption d-flex align-items-center justify-content-center">
+                    <div class="p-5"
+                         style="width: 100%; max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-md-3">
+                            Khóa
+                            học
+                            trực
+                            tuyến
+                            tốt
+                            nhất</h5>
+                        <h1 class="display-3 text-white mb-md-4">
+                            Nền
+                            tảng
+                            học
+                            tập
+                            trực
+                            tuyến
+                            tốt
+                            nhất</h1>
+                        <a></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item"
+                 style="min-height: 300px;">
+                <img class="position-relative w-100"
+                     th:src="@{/client/img/a3.png}"
+                     style="min-height: 300px; object-fit: cover">
+                <div class="carousel-caption d-flex align-items-center justify-content-center">
+                    <div class="p-5"
+                         style="width: 100%; max-width: 900px;">
+                        <h5 class="text-white text-uppercase mb-md-3">
+                            Khóa
+                            học
+                            trực
+                            tuyến
+                            tốt
+                            nhất</h5>
+                        <h1 class="display-3 text-white mb-md-4">
+                            Cách
+                            mới
+                            để
+                            học
+                            từ
+                            xa</h1>
+                        <a></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid rounded mb-4 mb-lg-0"
+                     th:src="@{/client/img/a4.png}"
+                     alt="">
+            </div>
+            <div class="col-lg-7">
+                <div class="text-left mb-4">
+                    <h5 class="text-primary text-uppercase mb-3"
+                        style="letter-spacing: 5px;">
+                        Giới
+                        Thiệu</h5>
+                    <h1>
+                        Cách
+                        tiếp
+                        cận
+                        đổi
+                        mới
+                        để
+                        học
+                        tập</h1>
+                </div>
+                <p>
+                    Việc
+                    học
+                    sẽ
+                    trở
+                    nên
+                    dễ
+                    dàng
+                    và
+                    thú
+                    vị
+                    hơn
+                    khi
+                    có
+                    người
+                    đồng
+                    hành
+                    phù
+                    hợp.
+                    Nền
+                    tảng
+                    của
+                    chúng
+                    tôi
+                    giúp
+                    bạn
+                    kết
+                    nối
+                    nhanh
+                    chóng
+                    với
+                    các
+                    gia
+                    sư
+                    chất
+                    lượng
+                    cao,
+                    tận
+                    tâm
+                    và
+                    giàu
+                    kinh
+                    nghiệm
+                    trong
+                    nhiều
+                    lĩnh
+                    vực.
+                    Với
+                    phương
+                    pháp
+                    giảng
+                    dạy
+                    linh
+                    hoạt,
+                    cá
+                    nhân
+                    hóa
+                    theo
+                    nhu
+                    cầu,
+                    học
+                    viên
+                    có
+                    thể
+                    tiếp
+                    thu
+                    kiến
+                    thức
+                    hiệu
+                    quả,
+                    cải
+                    thiện
+                    kết
+                    quả
+                    học
+                    tập
+                    và
+                    đạt
+                    được
+                    mục
+                    tiêu
+                    của
+                    mình
+                    nhanh
+                    chóng
+                    hơn.</p>
+                <a></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Team Start -->
+<!-- giáo viên -->
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3"
+                style="letter-spacing: 5px;">
+                Giáo
+                viên</h5>
+            <h1>
+                Gặp
+                Gỡ
+                Đội
+                Ngũ
+                Giáo
+                Viên
+                Của
+                Chúng
+                Tôi</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 text-center team mb-4"
+                 th:each="tutor : ${tutors}"
+                 th:if="${tutor.statusUser == T(com.example.onlinetutors.util.enumclass.StatusUserEnum).ACTIVE}">
+                <div class="team-item rounded overflow-hidden mb-2">
+                    <div class="team-img position-relative">
+                        <img class="img-fluid"
+                             th:src="@{'/adminImg/images/' + ${tutor.avatar}}"
+                             alt="">
+                        <div class="team-social">
+                            <a class="btn btn-outline-light btn-square mx-1"
+                               href="#"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-square mx-1"
+                               href="#"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-square mx-1"
+                               href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary p-4">
+                        <a th:href="@{/tutor/detailed(id=${tutor.id})}" ><h5 th:text="${tutor.name}"></h5></a>
+                        <p class="m-0"
+                           th:text="${tutor.profileDescription}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mb-5">
+            <a th:href="@{teacher}" class="btn btn-lg btn-primary m-2 text-center mb-5">
+                Xem thêm..
+            </a>
+        </div>
+
+
+        </a>
+    </div>
+</div>
+<!-- Team End -->
+
+
+<!-- Category Start -->
+<div th:replace="~{fragments/course :: course}"></div>
+
+<!-- Category Start -->
+
+
+<!-- Courses Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3"
+                style="letter-spacing: 5px;">
+                Khóa
+                học</h5>
+            <h1>
+                Khóa
+                học
+                phổ
+                biến
+                của
+                chúng
+                tôi</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4"
+                 th:each="course : ${courses}">
+                <div class="rounded overflow-hidden mb-2">
+                    <img class="img-fluid3"
+                         th:src="@{'/client/images/' + ${course.imageUrl}}"
+                         alt="">
+                    <div class="bg-secondary p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                            <small class="m-0"><i
+                                    class="fa fa-users text-primary mr-2"></i>25
+                                Học
+                                sinh</small>
+                            <small class="m-0"><i
+                                    class="far fa-clock text-primary mr-2"></i>01h
+                                30m</small>
+                        </div>
+                        <a class="h5"
+                           th:href="@{/parent/details(id=${course.id})}"
+                           th:text="${course.nameCourse}"></a>
+                        <div class="border-top mt-4 pt-4">
+                            <div class="d-flex justify-content-between">
+                                <a th:href="@{/parent/details(id=${course.id})}" type="button" class="btn btn-outline-primary m-2">Primary</a>
+
+                                <h5 class="m-0"
+                                    th:text="${course.priceCourse != null ? #numbers.formatDecimal(course.priceCourse, 0, 'COMMA', 0, 'POINT') + '₫' : '0₫'}">
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Courses End -->
+
+
+<!-- Registration Start -->
+<div class="container-fluid bg-registration py-5"
+     style="margin: 90px 0;">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="mb-4">
+                    <h5 class="text-primary text-uppercase mb-3"
+                        style="letter-spacing: 5px;">
+                        Cần
+                        bất
+                        kỳ
+                        khóa
+                        học
+                        nào</h5>
+                    <h1 class="text-white">
+                        Giảm
+                        30%
+                        cho
+                        học
+                        viên
+                        mới</h1>
+                </div>
+                <p class="text-white">
+                    Việc
+                    học
+                    tập
+                    trở
+                    nên
+                    dễ
+                    dàng
+                    và
+                    hiệu
+                    quả
+                    hơn
+                    khi
+                    bạn
+                    có
+                    người
+                    đồng
+                    hành
+                    phù
+                    hợp.
+                    Chúng
+                    tôi
+                    giúp
+                    bạn
+                    kết
+                    nối
+                    với
+                    gia
+                    sư
+                    chất
+                    lượng,
+                    tận
+                    tâm
+                    và
+                    giàu
+                    kinh
+                    nghiệm
+                    để
+                    đạt
+                    kết
+                    quả
+                    tốt
+                    nhất.</p>
+                <ul class="list-inline text-white m-0">
+                    <li class="py-2">
+                        <i class="fa fa-check text-primary mr-3"></i>Học
+                        tập
+                        hiệu
+                        quả
+                        với
+                        sự
+                        hướng
+                        dẫn
+                        tận
+                        tâm.
+                    </li>
+                    <li class="py-2">
+                        <i class="fa fa-check text-primary mr-3"></i>Kết
+                        nối
+                        nhanh
+                        chóng
+                        với
+                        gia
+                        sư
+                        phù
+                        hợp.
+                    </li>
+                    <li class="py-2">
+                        <i class="fa fa-check text-primary mr-3"></i>Nâng
+                        cao
+                        kỹ
+                        năng
+                        và
+                        đạt
+                        được
+                        mục
+                        tiêu
+                        học
+                        tập.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-5">
+                <div class="card border-0">
+                    <div class="card-header bg-light text-center p-4">
+                        <h1 class="m-0">
+                            Đăng
+                            ký
+                            ngay</h1>
+                    </div>
+                    <div class="card-body rounded-bottom bg-primary p-5">
+                        <div>
+                            <button class="btn btn-dark btn-block border-0 py-3"
+                                    type="submit">
+                                Đăng
+                                ký
+                                ngay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            s
+        </div>
+    </div>
+</div>
+<!-- Registration End -->
+
+<!-- Footer Start -->
+<div th:replace="~{fragments/clientFooter :: clientFooter}"></div>
+
+<!-- Back to Top -->
+<a href="#"
+   class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
+        class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script th:src="@{https://code.jquery.com/jquery-3.4.1.min.js}"></script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/client/lib/easing/easing.min.js}"></script>
+<script th:src="@{/client/lib/owlcarousel/owl.carousel.min.js}"></script>
+
+<!-- Contact Javascript File -->
+<script th:src="@{/client/mail/jqBootstrapValidation.min.js}"></script>
+<script th:src="@{/client/mail/contact.js}"></script>
+
+<!-- Template Javascript -->
+<script th:src="@{/client/js/main.js}"></script>
+</body>
+
+</html>

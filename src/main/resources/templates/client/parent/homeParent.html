@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>ECOURSES - Online Courses HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link th:href="@{/client/img/favicon.ico}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/client/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+    <link th:href="@{/client/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+<!-- Topbar Start -->
+<div th:replace="~{fragments/clientHeader :: clientHeader}"></div>
+<!-- Topbar End -->
+
+
+<!-- Courses Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1>Khóa học của bạn</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4" th:each="course : ${courses}">
+                <div class="rounded overflow-hidden mb-2">
+                    <img class="img-fluid" th:src="@{/client/images/{image}(image=${course.imageUrl})}" alt="">
+                    <div class="bg-secondary p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                        </div>
+                        <a class="h5" th:href="@{/parent/course-success(id=${course.id})}" th:text="${course.nameCourse}"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Courses End -->
+
+<!-- Footer Start -->
+<div th:replace="~{fragments/clientFooter :: clientFooter}"></div>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script th:src="@{https://code.jquery.com/jquery-3.4.1.min.js}"></script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/client/lib/easing/easing.min.js}"></script>
+<script th:src="@{/client/lib/owlcarousel/owl.carousel.min.js}"></script>
+
+<!-- Contact Javascript File -->
+<script th:src="@{/client/mail/jqBootstrapValidation.min.js}"></script>
+<script th:src="@{/client/mail/contact.js}"></script>
+
+<!-- Template Javascript -->
+<script th:src="@{/client/js/main.js}"></script>
+</body>
+
+</html>
