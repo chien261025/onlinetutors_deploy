@@ -5,4 +5,5 @@ spring:
   application:
     name: onlinetutors
   profiles:
-    active: test
+    active: prod
+    
